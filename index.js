@@ -62,8 +62,12 @@ const auth= async(req,res,next)=>{
 
 }
 app.get('/api/logout',auth,async(req,res)=>{
-    req.users =null;
-    res.status(200).send({done:"ok"});
+    try{
+        req.users =null;
+        res.status(200).send({done:"ok"});
+    }catch(e){
+        res.status(400).send(e);
+    }
 })
 app.post('/api/create_user',async (req,res)=>{
     try{
