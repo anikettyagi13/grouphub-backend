@@ -57,7 +57,7 @@ const auth= async(req,res,next)=>{
         }
     }catch(e){
         console.log(e);
-        res.status(401).send(e);
+        res.status(200).send({loggedIn:'false'});
     }
 
 }
