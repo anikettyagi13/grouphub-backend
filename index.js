@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB,{
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-var wishList = ['http://127.0.0.1:3000','http://localhost:3000']
+var wishList = ['http://127.0.0.1:3000','http://localhost:3000','https://anikettyagi-grouphub']
 app.use(cors({
     origin:function(origin,callback){
         if(wishList.indexOf(origin)!==-1){
